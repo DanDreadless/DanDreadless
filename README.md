@@ -47,6 +47,6 @@ These projects are documented at [vault1337.com](https://www.vault1337.com). The
 
 `Python` `Django` `Docker` `PostgreSQL` `Bash` `Powershell` `Linux` `Windows` `MacOS`
 
-### 🤖 Tech CLAUDE helps me with
+### 🤖 Tech CLAUDE "helps" me with
 
 `Go` `Rust` `React` `TypeScript` `Redis` `Tailwind CSS`
