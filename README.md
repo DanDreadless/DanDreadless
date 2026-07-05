@@ -6,36 +6,41 @@ I'm Dan — a security analyst playing developer, building open-source tools for
 
 ### 🔬 Projects
 
-#### [Vault1337](https://github.com/DanDreadless/Vault1337) — Self-Hosted Malware Analysis Platform
+#### [Minos](https://github.com/DanDreadless/minos) — Modern DNS Sinkhole
 
-A privacy-first, on-premises static malware analysis platform for security researchers and educators. No cloud dependencies — everything runs locally.
+A user-friendly DNS sinkhole (a Pi-hole alternative) written in Go — a single static binary with an embedded web UI, light enough to run on a Raspberry Pi. Every query gets judged against your blocklists and sentenced; allowed queries are forwarded upstream over encrypted DNS.
 
-- **20+ analysis tools** covering PE, ELF, Mach-O, APK, .NET, documents, archives, and email
-- **Threat intelligence enrichment** via VirusTotal, AbuseIPDB, Shodan, and Spur
-- **MITRE ATT&CK mapping**, YARA rule engine, simhash clustering, and STIX 2.1 export
-- **IOC extraction and enrichment** across 13 IOC types
-- **REST API** with JWT auth, Swagger docs, and PDF report generation
-- Stack: Python / Django / React / TypeScript / PostgreSQL / Docker
-- Test the project with docker
-  - docker pull vault1337/vault1337
----
-
-#### [Insight](https://github.com/DanDreadless/insight) — Passive Web Threat Scanner
-
-A content-based URL scanner that detects malicious and suspicious web content without relying on reputation databases — catching zero-day campaigns and newly registered domains that traditional feeds miss.
-
-- **76+ detection checks** across JavaScript threats, phishing indicators, domain intelligence, HTTP headers, and TLS/SSL
-- Detects: obfuscated JS, Magecart skimmers, crypto miners, wallet drainers, SocGholish/ClearFake lures, ClickFix, HTML smuggling, typosquatting, IDN homograph attacks, and more
-- **Technology stack fingerprinting** for CMS, frameworks, CDN, and security tooling
-- Real-time scan progress via Server-Sent Events
-- Stack: Python / Django / Celery / Redis / React / TypeScript / PostgreSQL / Docker
+- **Blocklist filtering** (hosts, plain, AdBlock formats) with one-click pardons from a live query log
+- **Family controls** — per-device groups, one-click blocked services, schedules, and provider-enforced Safe Search
+- **Fast resolver core** — response cache, request coalescing, serve-stale (RFC 8767), and automatic upstream failover
+- **Encrypted DNS** — upstream DoH/DoT plus client-facing DoT/DoH with automatic ACME certificates
+- **Prometheus metrics**, a documented REST API, Home Assistant recipes, and one-command Pi-hole/AdGuard import
+- **No telemetry, ever.** Stack: Go / embedded web UI / SQLite / Docker
+- Install: `curl -fsSL https://raw.githubusercontent.com/DanDreadless/minos/main/deploy/install.sh | sudo sh`
 
 ---
 
-The Document site for both projects can be found at https://www.vault1337.com
+#### [Carapace](https://github.com/DanDreadless/Carapace) — Safe Web Renderer
+
+A safe visual renderer that loads suspicious pages in Chromium headless with JavaScript fully enabled but **all network requests intercepted and blocked** — so dynamic overlays (ClickFix, SocGholish, ClearFake, wallet drainers) execute and render visibly without ever reaching attacker infrastructure.
+
+- **Safe render** — JS enabled, network intercepted, dynamic attack UI captured in a screenshot
+- Detects drive-by downloads, `eval()` chains, clipboard hijacks, and exfiltration at render time
+- **Risk score (0–100)** and structured threat flags, plus browser-grade technology fingerprinting
+- Mobile screenshot support (375×844 iPhone viewport); composites a verdict badge onto every capture
+- Stack: Rust / Chromium (headless)
+
+---
+
+### 🔒 Also maintained
+
+These projects are documented at [vault1337.com](https://www.vault1337.com). Their source repositories are **temporarily private** while a conflict of interest is resolved — access is available on request.
+
+- **Vault1337** — self-hosted static malware analysis platform (20+ tools, MITRE ATT&CK mapping, STIX 2.1 export). Still available on Docker Hub: `docker pull vault1337/vault1337`
+- **Insight** — passive, content-based web threat scanner (76+ checks). Live at [insight.vault1337.com](https://insight.vault1337.com)
 
 ---
 
 ### 🛠️ Tech I work with
 
-`Python` `Django` `React` `TypeScript` `Docker` `PostgreSQL` `Redis` `Tailwind CSS`
+`Go` `Rust` `Python` `Django` `React` `TypeScript` `Docker` `PostgreSQL` `Redis` `Tailwind CSS`
