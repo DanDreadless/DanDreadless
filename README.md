@@ -36,11 +36,17 @@ A safe visual renderer that loads suspicious pages in Chromium headless with Jav
 
 These projects are documented at [vault1337.com](https://www.vault1337.com). Their source repositories have been made **private** until further notice — any interest in access should be made directly.
 
-- **Vault1337** — self-hosted static malware analysis platform (20+ tools, MITRE ATT&CK mapping, STIX 2.1 export). Still available on Docker Hub: `docker pull vault1337/vault1337`
-- **Insight** — passive, content-based web threat scanner (76+ checks). Live at [insight.vault1337.com](https://insight.vault1337.com)
+- **Vault1337** — self-hosted static malware analysis platform (20+ tools, MITRE ATT&CK mapping, STIX 2.1 export).
+  - Still available on Docker Hub: `docker pull vault1337/vault1337`
+- **Insight** — passive, content-based web threat scanner (76+ checks).
+  - Live at [insight.vault1337.com](https://insight.vault1337.com)
 
 ---
 
-### 🛠️ Tech I work with
+### 🛠️ Tech I'm comfortable with
 
-`Go` `Rust` `Python` `Django` `React` `TypeScript` `Docker` `PostgreSQL` `Redis` `Tailwind CSS`
+`Python` `Django` `Docker` `PostgreSQL` `Bash` `Powershell` `Linux` `Windows` `MacOS`
+
+### 🤖 Tech CLAUDE helps me with
+
+`Go` `Rust` `React` `TypeScript` `Redis` `Tailwind CSS`
