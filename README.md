@@ -1,22 +1,23 @@
 ## whoami
 
-I'm Dan — a security analyst playing developer, building open-source tools for blue teams.
+I'm Dan — a security analyst playing developer, building open-source tools for blue teams (and one for CTFs).
 
 ---
 
 ### 🔬 Projects
 
-#### [Minos](https://github.com/DanDreadless/minos) — Modern DNS Sinkhole
+#### [Minos](https://github.com/DanDreadless/minos) — Network-wide Ad & Tracker Blocker
 
-A user-friendly DNS sinkhole (a Pi-hole alternative) written in Go — a single static binary with an embedded web UI, light enough to run on a Raspberry Pi. Every query gets judged against your blocklists and sentenced; allowed queries are forwarded upstream over encrypted DNS.
+A modern Pi-hole and AdGuard Home alternative written in Go — one static binary with the web interface built in, light enough for a Raspberry Pi. *Every query gets judged:* every block names the list and rule behind it, with Allow one click away.
 
-- **Blocklist filtering** (hosts, plain, AdBlock formats) with one-click pardons from a live query log
-- **Family controls** — per-device groups, one-click blocked services, schedules, and provider-enforced Safe Search
-- **Fast resolver core** — response cache, request coalescing, serve-stale (RFC 8767), and automatic upstream failover
-- **Encrypted DNS** — upstream DoH/DoT plus client-facing DoT/DoH with automatic ACME certificates
-- **Prometheus metrics**, a documented REST API, Home Assistant recipes, and one-command Pi-hole/AdGuard import
-- **No telemetry, ever.** Stack: Go / embedded web UI / SQLite / Docker
-- Install: `curl -fsSL https://raw.githubusercontent.com/DanDreadless/minos/main/deploy/install.sh | sudo sh`
+- **DNS Filter** — self-healing blocklists (hosts, plain, AdBlock) from a verified catalog, audit (dry-run) lists, CNAME-cloak inspection, and `*.wildcard` / `/regex/` rules for everyone, a group or one device
+- **Family controls** — device groups with schedules, one-click blocked services, and provider-enforced Safe Search
+- **Privacy report** — the tracking companies each device talks to, blocked by company in one click
+- **Encrypted DNS both ways** — DoH, DoT, DNS over QUIC and HTTP/3, DDR, and in-process DNSSEC validation
+- **Built to live with** — millisecond Query Log search, a full guide in the app, phone-ready pages, password sign-in with authenticator codes, and signed one-click updates that roll back a release that doesn't start
+- **Plays well with others** — Prometheus metrics, a documented REST API, Home Assistant over MQTT, and one-command Pi-hole/AdGuard import
+- **No telemetry, ever.** Stack: Go / Svelte / SQLite / Docker
+- Docs: [vault1337.com/minos.html](https://www.vault1337.com/minos.html) · Install: `curl -fsSL https://raw.githubusercontent.com/DanDreadless/minos/main/deploy/install.sh | sudo sh`
 
 ---
 
@@ -29,6 +30,19 @@ A safe visual renderer that loads suspicious pages in Chromium headless with Jav
 - **Risk score (0–100)** and structured threat flags, plus browser-grade technology fingerprinting
 - Mobile screenshot support (375×844 iPhone viewport); composites a verdict badge onto every capture
 - Stack: Rust / Chromium (headless)
+
+---
+
+#### [Cyberdeck](https://github.com/DanDreadless/cyberdeck) — A CTF Companion Tool
+
+A terminal app for working Hack The Box machines from Kali Linux. It tracks your progress on each box, suggests what to run next (and *why*), and wraps the Kali tools so every command is explained and every result is kept. Not an autopilot: you still do the hacking.
+
+- **Tracks the box** — services, hostnames, URLs, creds, hashes, flags and every command run, in one folder per box
+- **Suggests next steps** — ranked, each with a short why and a link to learn more; skip or snooze any of them
+- **Wraps 45+ Kali tools** — a Run dialog with presets, explained flags and the exact command before anything runs
+- **Built for learning** — plain-English job summaries, a glossary, per-service checklists and an "I'm stuck" flow
+- **Claude Code over MCP** — safe recon on request; anything intrusive waits for your approval
+- Stack: Python / Textual / SQLite · Docs: [vault1337.com/cyberdeck.html](https://www.vault1337.com/cyberdeck.html)
 
 ---
 
